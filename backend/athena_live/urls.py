@@ -4,7 +4,7 @@ from django.urls import include, path
 from django.views.generic import RedirectView
 
 urlpatterns = [
-    path('admin/', RedirectView.as_view(url='/api/admin/', permanent=True)),
+    path('admin/', RedirectView.as_view(pattern_name='admin:index', permanent=False)),
     path('api/admin/', admin.site.urls),
     path('api/users/', include('users.urls')),
     # path('api/posts/', include('posts.urls')),
