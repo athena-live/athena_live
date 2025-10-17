@@ -11,8 +11,7 @@ function Navbar(): JSX.Element {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <span className="navbar__logo">A</span>
-        <span className="navbar__title">Athena Talent</span>
+        <span className="navbar__title">Jobs</span>
       </motion.div>
 
       <nav className="navbar__links">
