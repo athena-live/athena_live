@@ -1,8 +1,19 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 
-const navItems = ["Platform", "Positions", "Insights", "Pricing", "Stories"];
+const navItems = ["Positions", "Insights", "Stories"];
 
 function Navbar(): JSX.Element {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = (): void => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  const closeMenu = (): void => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="navbar">
       <motion.div
@@ -14,7 +25,19 @@ function Navbar(): JSX.Element {
         <span className="navbar__title">Jobs</span>
       </motion.div>
 
-      <nav className="navbar__links">
+      <button
+        type="button"
+        className={`navbar__toggle ${isMenuOpen ? "navbar__toggle--open" : ""}`}
+        onClick={toggleMenu}
+        aria-label="Toggle navigation"
+        aria-expanded={isMenuOpen}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+
+      <nav className={`navbar__links ${isMenuOpen ? "navbar__links--open" : ""}`}>
         {navItems.map((item, index) => (
           <motion.a
             key={item}
@@ -23,6 +46,7 @@ function Navbar(): JSX.Element {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 * index + 0.2, duration: 0.4 }}
+            onClick={closeMenu}
           >
             {item}
           </motion.a>
