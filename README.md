@@ -1,6 +1,6 @@
 # Athena.Live
 
-Athena.Live is a Django-powered professional networking platform inspired by LinkedIn. The platform helps professionals showcase their experience, connect with peers, share insights, chat in real time, explore job opportunities, and unlock premium features backed by analytics.
+Athena.Live is a Django-powered professional networking platform. The platform helps professionals showcase their experience, connect with peers, share insights, chat in real time, explore job opportunities, and unlock premium features backed by analytics.
 
 ## Quick Start
 
