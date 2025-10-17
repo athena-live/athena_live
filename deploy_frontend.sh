@@ -4,6 +4,9 @@ set -e
 # Ensure we are in the frontend directory on the deployment host
 cd /home/deploy/athena_live/frontend
 
+echo "Pulling latest changes..."
+git pull
+
 echo "Building React app..."
 npm install
 npm run build
