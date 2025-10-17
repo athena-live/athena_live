@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { platformInsights } from "../data/jobs";
+import Emoji from "./Emoji";
 
 function Insights(): JSX.Element {
   return (
@@ -21,7 +22,11 @@ function Insights(): JSX.Element {
             viewport={{ once: true, amount: 0.35 }}
             transition={{ duration: 0.6, delay: index * 0.08 }}
           >
-            <span className="insight-card__icon" aria-hidden>{insight.icon}</span>
+            <Emoji
+              symbol={insight.icon}
+              label={insight.title}
+              className="insight-card__icon"
+            />
             <h3>{insight.title}</h3>
             <p>{insight.description}</p>
           </motion.article>
