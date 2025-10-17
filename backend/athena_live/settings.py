@@ -26,7 +26,11 @@ SECRET_KEY = 'django-insecure-change-me'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+_raw_allowed_hosts = os.environ.get('DJANGO_ALLOWED_HOSTS')
+if _raw_allowed_hosts:
+    ALLOWED_HOSTS = [host.strip() for host in _raw_allowed_hosts.split(',') if host.strip()]
+else:
+    ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'jobs.athena.live']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
