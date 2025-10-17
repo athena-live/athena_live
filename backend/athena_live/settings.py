@@ -26,6 +26,8 @@ SECRET_KEY = 'django-insecure-change-me'
 
 DEBUG = True
 
+OPENAI_SECRET_KEY = os.environ.get('OPENAI_SECRET_KEY', '')
+
 _raw_allowed_hosts = os.environ.get('DJANGO_ALLOWED_HOSTS')
 if _raw_allowed_hosts:
     ALLOWED_HOSTS = [host.strip() for host in _raw_allowed_hosts.split(',') if host.strip()]
