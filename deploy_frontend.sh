@@ -5,6 +5,7 @@ set -e
 cd /home/deploy/athena_live/frontend
 
 echo "Building React app..."
+npm install
 npm run build
 
 echo "Deploying to /var/www/jobs.athena.live..."
@@ -18,4 +19,3 @@ echo "Reloading Caddy..."
 sudo systemctl reload caddy
 
 echo "✅ Deployment completed successfully!"
-
