@@ -59,7 +59,6 @@ function Navbar(): JSX.Element {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
       >
-        <button className="btn btn--ghost">Sign in</button>
         <button className="btn btn--primary">Join the network</button>
       </motion.div>
     </header>
