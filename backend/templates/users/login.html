@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Sign In · Athena Live{% endblock %}
+
+{% block content %}
+<h2>Sign in to your account</h2>
+
+{% if form.errors %}
+    <div class="alert" role="alert">
+        <strong>We couldn't sign you in.</strong> Please double-check your username and password.
+    </div>
+{% endif %}
+
+<form method="post" novalidate>
+    {% csrf_token %}
+    <div>
+        <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
+        {{ form.username }}
+        {% if form.username.errors %}
+            <p class="errorlist">{{ form.username.errors|striptags }}</p>
+        {% endif %}
+    </div>
+    <div>
+        <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>
+        {{ form.password }}
+        {% if form.password.errors %}
+            <p class="errorlist">{{ form.password.errors|striptags }}</p>
+        {% endif %}
+    </div>
+    {% if form.non_field_errors %}
+        <p class="errorlist">{{ form.non_field_errors|striptags }}</p>
+    {% endif %}
+
+    <button type="submit">Sign in</button>
+</form>
+{% endblock %}

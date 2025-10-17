@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     # Register project apps here.
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -111,3 +112,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = 'users:login'
+LOGIN_REDIRECT_URL = 'users:dashboard'
+LOGOUT_REDIRECT_URL = 'users:login'
