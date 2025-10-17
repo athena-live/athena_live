@@ -14,17 +14,19 @@ python manage.py runserver
 
 ## Project Layout
 
-- `athena_live/` – Django project configuration (settings, URLs, ASGI/WGI entry points).
-- `users/` – User profiles, authentication endpoints, and serializers.
-- `network/` – Connection graph and recommendations.
-- `posts/` – Feed, posts, comments, and likes.
-- `messaging/` – Real-time chat powered by Django Channels.
-- `jobs/` – Job listings, applications, and company profiles.
-- `notifications/` – In-app and email notifications.
-- `analytics/` – Engagement metrics and dashboards.
-- `payments/` – Premium subscriptions, invoices, and payment webhooks.
-- `search/` – Cross-domain discovery utilities and views.
-- `templates/`, `static/` – Shared UI assets for server-rendered pages.
+- `frontend/` – React single-page application that calls the Django API exposed under `/api/*`.
+- `backend/` – Django project powering the API and real-time services consumed by the frontend.
+- `backend/athena_live/` – Django project configuration (settings, URLs, ASGI/WGI entry points).
+- `backend/users/` – User profiles, authentication endpoints, and serializers.
+- `backend/network/` – Connection graph and recommendations.
+- `backend/posts/` – Feed, posts, comments, and likes.
+- `backend/messaging/` – Real-time chat powered by Django Channels.
+- `backend/jobs/` – Job listings, applications, and company profiles.
+- `backend/notifications/` – In-app and email notifications.
+- `backend/analytics/` – Engagement metrics and dashboards.
+- `backend/payments/` – Premium subscriptions, invoices, and payment webhooks.
+- `backend/search/` – Cross-domain discovery utilities and views.
+- `backend/templates/`, `backend/static/` – Shared UI assets for server-rendered pages.
 
 ## Feature-to-Component Mapping
 
