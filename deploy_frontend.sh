@@ -18,3 +18,4 @@ echo "Reloading Caddy..."
 sudo systemctl reload caddy
 
 echo "✅ Deployment completed successfully!"
+
