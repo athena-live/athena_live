@@ -1,11 +1,12 @@
 """athena_live URL Configuration."""
 from django.contrib import admin
 from django.urls import include, path
-from django.views.generic import RedirectView
+
+from users.views import UserLoginView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', RedirectView.as_view(pattern_name='users:login', permanent=False)),
+    path('login/', UserLoginView.as_view(), name='login'),
     path('api/users/', include('users.urls')),
     # path('api/posts/', include('posts.urls')),
     # path('api/network/', include('network.urls')),

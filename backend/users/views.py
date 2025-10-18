@@ -22,12 +22,12 @@ class UserLoginView(LoginView):
 class UserLogoutView(LogoutView):
     """Terminate the current session and return the user to the login page."""
 
-    next_page = reverse_lazy('users:login')
+    next_page = reverse_lazy('login')
 
 
 class UserDashboardView(LoginRequiredMixin, TemplateView):
     """Simple landing page for authenticated users."""
 
     template_name = 'users/dashboard.html'
-    login_url = reverse_lazy('users:login')
+    login_url = reverse_lazy('login')
     redirect_field_name = 'next'
