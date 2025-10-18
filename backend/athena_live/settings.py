@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # Register project apps here.
     'dashboard',
     'users',
+    'scrapers',
 ]
 
 MIDDLEWARE = [
