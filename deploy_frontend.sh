@@ -21,4 +21,8 @@ sudo chmod -R 755 /var/www/jobs.athena.live
 echo "Reloading Caddy..."
 sudo systemctl reload caddy
 
+echo "Applying backend migrations..."
+cd /home/deploy/athena_live/backend
+python manage.py migrate
+
 echo "✅ Deployment completed successfully!"
