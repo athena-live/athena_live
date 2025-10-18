@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import include, path
 
-from scrapers.views import create_scraper
+from scrapers.views import ScraperManagementView, create_scraper
 from users.views import UserLoginView
 
 urlpatterns = [
@@ -12,6 +12,7 @@ urlpatterns = [
     path('login/', UserLoginView.as_view(), name='login'),
     path('api/', include('dashboard.urls')),
     path('api/users/', include('users.urls')),
+    path("api/scrapers/", ScraperManagementView.as_view(), name="scrapers-manage"),
     path("api/scrapers/create/", create_scraper, name="scrapers-create"),
     # path('api/posts/', include('posts.urls')),
     # path('api/network/', include('network.urls')),

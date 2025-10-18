@@ -18,6 +18,15 @@
             <p>Signed in as {{ user.get_username }} &middot; <a href="{% url 'users:logout' %}">Log out</a></p>
         {% endif %}
     </header>
+    {% if messages %}
+        <section class="flash-messages">
+            <ul>
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+    {% endif %}
     <main>
         {% block content %}{% endblock %}
     </main>

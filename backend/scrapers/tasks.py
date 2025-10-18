@@ -12,10 +12,11 @@ def schedule_all() -> None:
     try:
         scheduler.remove_all_jobs()
         for scraper in Scraper.objects.filter(active=True):
+            interval = max(scraper.interval_hours, 1)
             scheduler.add_job(
                 run_scraper,
                 "interval",
-                hours=24,
+                hours=interval,
                 args=[scraper.id],
                 id=f"scraper-{scraper.id}",
                 replace_existing=True,

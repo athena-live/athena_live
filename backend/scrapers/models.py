@@ -8,6 +8,7 @@ class Scraper(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     last_run = models.DateTimeField(null=True, blank=True)
     active = models.BooleanField(default=True)
+    interval_hours = models.PositiveIntegerField(default=24)
 
     def __str__(self) -> str:
         return f"{self.company} ({self.url})"
