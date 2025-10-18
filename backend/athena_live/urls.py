@@ -9,6 +9,7 @@ from users.views import UserLoginView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', UserLoginView.as_view(), name='login'),
+    path('api/', include('dashboard.urls')),
     path('api/users/', include('users.urls')),
     # path('api/posts/', include('posts.urls')),
     # path('api/network/', include('network.urls')),

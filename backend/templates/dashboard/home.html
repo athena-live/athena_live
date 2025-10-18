@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Operations Dashboard · Athena Live{% endblock %}
+
+{% block content %}
+<section>
+    <h2>Operations Dashboard</h2>
+    <p class="lead">
+        Central hub for the operations team to access admin tools, API endpoints, and sign-in pages.
+        Bookmark this page for quick access to backend utilities.
+    </p>
+</section>
+
+<section>
+    <h3>Quick Links</h3>
+    <ul>
+        {% for item in nav_links %}
+            <li>
+                <a href="{{ item.url }}">{{ item.label }}</a>
+                — {{ item.description }}
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section>
+    <h3>Need Credentials?</h3>
+    <p>
+        If you require access to any of these tools, contact the platform administrator to request or reset your login.
+    </p>
+</section>
+{% endblock %}

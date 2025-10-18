@@ -8,7 +8,12 @@
 </head>
 <body>
     <header>
-        <h1><a href="{% url 'users:dashboard' %}">Athena Live</a></h1>
+        <h1><a href="{% url 'dashboard:home' %}">Athena Live</a></h1>
+        <nav>
+            <a href="{% url 'dashboard:home' %}">Ops Home</a>
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'admin:index' %}">Admin</a>
+        </nav>
         {% if user.is_authenticated %}
             <p>Signed in as {{ user.get_username }} &middot; <a href="{% url 'users:logout' %}">Log out</a></p>
         {% endif %}
