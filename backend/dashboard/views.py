@@ -16,5 +16,6 @@ class DashboardHomeView(TemplateView):
             {'label': 'User Login', 'url': reverse('login'), 'description': 'Sign in with standard credentials'},
             {'label': 'User Dashboard', 'url': reverse('users:dashboard'), 'description': 'Post-login landing page'},
             {'label': 'API: Users', 'url': '/api/users/', 'description': 'Entry point for user APIs'},
+            {'label': 'API: Scrapers', 'url': reverse('scrapers-create'), 'description': 'Create and store scraper code'},
         ]
         return context

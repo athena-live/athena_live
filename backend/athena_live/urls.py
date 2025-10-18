@@ -12,7 +12,7 @@ urlpatterns = [
     path('login/', UserLoginView.as_view(), name='login'),
     path('api/', include('dashboard.urls')),
     path('api/users/', include('users.urls')),
-    path("api/scrapers/create/", create_scraper),
+    path("api/scrapers/create/", create_scraper, name="scrapers-create"),
     # path('api/posts/', include('posts.urls')),
     # path('api/network/', include('network.urls')),
     # path('api/messaging/', include('messaging.urls')),
